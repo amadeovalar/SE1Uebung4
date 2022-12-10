@@ -5,8 +5,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
+import org.w3c.dom.css.Rect;
 
 public class RectangularShapeFactoryTest {
     
@@ -45,7 +47,16 @@ public class RectangularShapeFactoryTest {
         assertNotEquals(secondNormalSquare, notEqualSideRectangle);
     }
 
-    
+    @Test
+    // Execptions Tests
+    public void execptionTest() {
+        // Test für Square
+        assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(0));
+        // Test für Rectangle
+        assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(0,5));
+    }
+
+
     
     
     
