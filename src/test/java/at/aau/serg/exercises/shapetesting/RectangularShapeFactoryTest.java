@@ -9,24 +9,18 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.Iterator;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class RectangularShapeFactoryTest {
-    
-    // @BeforeAll
-    // public RectangularShape setUp(int width, int height) {
-    //     RectangularShapeFactory shapeFactory = new RectangularShapeFactory();
-    //     if (width == height) {
-    //         RectangularShape shape = shapeFactory.create(width);
-    //     } else {
-    //         RectangularShape shape = shapeFactory.create(width, height);
-    //     }
-        
-    //     return shape;
-    // }
-    RectangularShapeFactory shapeFactory = new RectangularShapeFactory();
 
+    RectangularShapeFactory shapeFactory;
 
+    @BeforeEach
+    void setUp() {
+        shapeFactory = new RectangularShapeFactory();  
+    }
+     
 
     @Test
     // Equilateral Tests
@@ -36,29 +30,47 @@ public class RectangularShapeFactoryTest {
         assertTrue(testSquare.isEquilateral());
 
     }
-    
+
     @Test
     public void equilateralRectangleTest() {
         Rectangle testRectangle = (Rectangle) shapeFactory.create(5, 6);
 
         assertFalse(testRectangle.isEquilateral());
     }
-    
+
     @Test
     // Äquivalenz Tests
-    public void equivalenceTest() {
-        Square normalSquare = new Square(10);
-        Rectangle equalsideRectangle = new Rectangle(10, 10);
+    public void equivalenceEqualSquareTest() {
+        Square normalSquareOne = (Square) shapeFactory.create(10);
+        Square normalSquareTwo = (Square) shapeFactory.create(10);
+        
 
-        assertEquals(normalSquare, equalsideRectangle);
+        assertEquals(normalSquareOne, normalSquareTwo);
     }
-    
     @Test
-    public void equivalenceNotTest() {
-        Square secondNormalSquare = new Square(20);
-        Rectangle notEqualSideRectangle = new Rectangle(10, 15);
+    // Äquivalenz Tests - Square
+    public void equivalenceNotEqualSquareTest() {
+        Square normalSquareOne = (Square) shapeFactory.create(10);
+        Square normalSquareTwo = (Square) shapeFactory.create(12);
+        
 
-        assertNotEquals(secondNormalSquare, notEqualSideRectangle);
+        assertNotEquals(normalSquareOne, normalSquareTwo);
+    }
+
+    @Test
+    public void equivalenceEqualRectangleTest() {
+        Rectangle equalSideRectangleOne = (Rectangle) shapeFactory.create(12, 10);
+        Rectangle equalSideRectangleTwo = (Rectangle) shapeFactory.create(12, 10);
+
+        assertEquals(equalSideRectangleOne, equalSideRectangleTwo);
+    }
+
+    @Test
+    public void equivalenceNotEqualRectangleTest() {
+        Rectangle notEqualSideRectangleOne = (Rectangle) shapeFactory.create(5, 2);
+        Rectangle notEqualSideRectangleTwo = (Rectangle) shapeFactory.create(12, 10);
+
+        assertNotEquals(notEqualSideRectangleOne, notEqualSideRectangleTwo);
     }
 
     @Test
@@ -67,17 +79,17 @@ public class RectangularShapeFactoryTest {
         // Test für Square
         assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(0));
         // Test für Rectangle
-        assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(0,5));
+        assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(0, 5));
     }
 
     @Test
     // 4 Side Objekte Test
     public void getSidesTestSquare() {
         int side = 5;
-        Square squareSides = new Square(side);
+        Square squareSides = (Square) shapeFactory.create(side);
 
         Iterator<Side> iter = squareSides.getSides().iterator();
-        
+
         while (iter.hasNext()) {
             assertEquals(side, iter.next().getLength());
         }
@@ -90,23 +102,19 @@ public class RectangularShapeFactoryTest {
     @Test
     public void getsidesTestRectangle() {
         int width = 10;
-        int height = 10;
+        int height = 12;
 
-        Rectangle rectangleSides = new Rectangle(width, height);
-        
+        Rectangle rectangleSides = (Rectangle) shapeFactory.create(width, height);;
+
         for (int i = 0; i < rectangleSides.getSides().size(); i++) {
-            if(i % 2 == 0){
+            if (i % 2 == 0) {
                 assertEquals(height, rectangleSides.getSides().get(i).getLength());
             } else {
                 assertEquals(width, rectangleSides.getSides().get(i).getLength());
             }
-            
+
         }
 
     }
 
-    
-    
-    
-    
 }
