@@ -11,6 +11,8 @@ import java.util.Iterator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
@@ -25,10 +27,11 @@ public class RectangularShapeFactoryTest {
     }
      
 
-    @Test
+    @ParameterizedTest
+    @ValueSource(ints = {5, 10, 20})
     // Equilateral Tests
-    public void equilateralSquareTest() {
-        Square testSquare = (Square) shapeFactory.create(5);
+    public void equilateralSquareTest(int sideLenght) {
+        Square testSquare = (Square) shapeFactory.create(sideLenght);
 
         assertTrue(testSquare.isEquilateral());
 
