@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Playground",
+            "request": "launch",
+            "mainClass": "at.aau.serg.exercises.ringbuffer.Playground",
+            "projectName": "se14"
+        },
+        {
+            "type": "java",
+            "name": "Launch main",
+            "request": "launch",
+            "mainClass": "at.aau.serg.exercises.ringbuffer.main",
+            "projectName": "se14"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}"

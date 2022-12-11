@@ -9,27 +9,27 @@ import java.util.NoSuchElementException;
 @SuppressWarnings(&quot;unchecked&quot;)
 public class RingBuffer&lt;T&gt; implements Iterable&lt;T&gt; {
     private T[] buffer;          // queue elements
-<span class="nc" id="L12">    private int count = 0;          // number of elements on queue</span>
-<span class="nc" id="L13">    private int indexOut = 0;       // index of first element of queue</span>
-<span class="nc" id="L14">    private int indexIn = 0;       // index of next available slot</span>
+<span class="fc" id="L12">    private int count = 0;          // number of elements on queue</span>
+<span class="fc" id="L13">    private int indexOut = 0;       // index of first element of queue</span>
+<span class="fc" id="L14">    private int indexIn = 0;       // index of next available slot</span>
     // cast needed since no generic array creation in Java
-<span class="nc" id="L16">    public RingBuffer(int capacity) {</span>
-<span class="nc" id="L17">        buffer = (T[]) new Object[capacity];</span>
-<span class="nc" id="L18">    }</span>
+<span class="fc" id="L16">    public RingBuffer(int capacity) {</span>
+<span class="fc" id="L17">        buffer = (T[]) new Object[capacity];</span>
+<span class="fc" id="L18">    }</span>
     public boolean isEmpty() {
-<span class="nc bnc" id="L20" title="All 2 branches missed.">        return count == 0;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        return count == 0;</span>
     }
     public int size() {
-<span class="nc" id="L23">        return count;</span>
+<span class="fc" id="L23">        return count;</span>
     }
     public void push(T item) {
-<span class="nc bnc" id="L26" title="All 2 branches missed.">        if (count == buffer.length) {</span>
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if (count == buffer.length) {</span>
 <span class="nc" id="L27">            throw new RuntimeException(&quot;Ring buffer overflow&quot;);</span>
         }
-<span class="nc" id="L29">        buffer[indexIn] = item;</span>
-<span class="nc" id="L30">        indexIn = (indexIn + 1) % buffer.length;     // wrap-around</span>
-<span class="nc" id="L31">        count++;</span>
-<span class="nc" id="L32">    }</span>
+<span class="fc" id="L29">        buffer[indexIn] = item;</span>
+<span class="fc" id="L30">        indexIn = (indexIn + 1) % buffer.length;     // wrap-around</span>
+<span class="fc" id="L31">        count++;</span>
+<span class="fc" id="L32">    }</span>
     public T pop() {
 <span class="nc bnc" id="L34" title="All 2 branches missed.">        if (isEmpty()) {</span>
 <span class="nc" id="L35">            throw new RuntimeException(&quot;Ring buffer underflow&quot;);</span>
