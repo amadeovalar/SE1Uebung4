@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="at.aau.serg.exercises.shapetesting.RectangularShapeFactoryTest" time="0.008" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="at.aau.serg.exercises.shapetesting.RectangularShapeFactoryTest" time="0.015" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1"/>
@@ -41,7 +41,7 @@
     <property name="java.class.path" value="/opt/homebrew/Cellar/maven/3.8.6/libexec/boot/plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher clean test"/>
     <property name="java.home" value="/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -62,12 +62,14 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
   <testcase classname="RectangularShapeFactoryTest" name="equivalenceEqualSquareTest()" time="0.003"/>
-  <testcase classname="RectangularShapeFactoryTest" name="getsidesTestRectangle()" time="0.001"/>
-  <testcase classname="RectangularShapeFactoryTest" name="equilateralRectangleTest()" time="0.002"/>
+  <testcase classname="RectangularShapeFactoryTest" name="getsidesTestRectangle()" time="0"/>
+  <testcase classname="RectangularShapeFactoryTest" name="equilateralRectangleTest()" time="0.001"/>
   <testcase classname="RectangularShapeFactoryTest" name="getSidesTestSquare()" time="0"/>
   <testcase classname="RectangularShapeFactoryTest" name="equivalenceNotEqualRectangleTest()" time="0"/>
   <testcase classname="RectangularShapeFactoryTest" name="equivalenceEqualRectangleTest()" time="0"/>
-  <testcase classname="RectangularShapeFactoryTest" name="equilateralSquareTest()" time="0"/>
-  <testcase classname="RectangularShapeFactoryTest" name="equivalenceNotEqualSquareTest()" time="0.001"/>
+  <testcase classname="[1] 5(equilateralSquareTest(int))" name="[1] 5(equilateralSquareTest" time="0.009"/>
+  <testcase classname="[2] 10(equilateralSquareTest(int))" name="[2] 10(equilateralSquareTest" time="0.001"/>
+  <testcase classname="[3] 20(equilateralSquareTest(int))" name="[3] 20(equilateralSquareTest" time="0"/>
+  <testcase classname="RectangularShapeFactoryTest" name="equivalenceNotEqualSquareTest()" time="0"/>
   <testcase classname="RectangularShapeFactoryTest" name="execptionTest()" time="0.001"/>
 </testsuite>
