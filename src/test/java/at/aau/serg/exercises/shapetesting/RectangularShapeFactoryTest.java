@@ -11,7 +11,10 @@ import java.util.Iterator;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
+@RunWith(JUnitPlatform.class)
 public class RectangularShapeFactoryTest {
 
     RectangularShapeFactory shapeFactory;
@@ -80,6 +83,8 @@ public class RectangularShapeFactoryTest {
         assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(0));
         // Test für Rectangle
         assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(0, 5));
+        // Test für Rectangle
+        assertThrows(IllegalArgumentException.class, () -> shapeFactory.create(5, 0));
     }
 
     @Test
