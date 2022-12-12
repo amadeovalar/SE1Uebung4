@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="at.aau.serg.exercises.ringbuffer.RingBufferTest" time="0.005" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="at.aau.serg.exercises.ringbuffer.RingBufferTest" time="0.01" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1"/>
@@ -61,5 +61,15 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="JUnit Jupiter" name="JUnit Jupiter" time="0.005"/>
+  <testcase classname="BaseTest" name="isNotEmptyTest()" time="0.005"/>
+  <testcase classname="BaseTest" name="pushExceptionTest()" time="0.001"/>
+  <testcase classname="BaseTest" name="iteratorHasNextMethodTest()" time="0.001"/>
+  <testcase classname="BaseTest" name="popExceptionTesting()" time="0"/>
+  <testcase classname="BaseTest" name="isEmptyTest()" time="0.001"/>
+  <testcase classname="BaseTest" name="popMethodTest()" time="0.001"/>
+  <testcase classname="BaseTest" name="iteratorTest()" time="0"/>
+  <testcase classname="BaseTest" name="sizeTest()" time="0"/>
+  <testcase classname="BaseTest" name="iteratorRemoveMethodExceptionTest()" time="0.001"/>
+  <testcase classname="BaseTest" name="iteratorNextExceptionTest()" time="0"/>
+  <testcase classname="BaseTest" name="sizeValuesAddedTest()" time="0"/>
 </testsuite>
