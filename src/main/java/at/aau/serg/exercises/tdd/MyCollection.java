@@ -11,6 +11,10 @@ public class MyCollection {
         cursor=0;
     }
 
+    public String[] getList() {
+        return list;
+    }
+
     /**
      * Returns the size of the collection
      * @return The number of instances in the collection
@@ -32,15 +36,22 @@ public class MyCollection {
      * IllegalArgumentException. If the list is empty it throws an IllegalArgumentException
      * @param s String to remove
      */
-    public void remove(String s) throws IllegalArgumentException{
-        
+    public void remove(String s) throws IllegalArgumentException {
+        if (cursor == 0) {
+            throw new IllegalArgumentException();
+        }
     }
+    
 
     /**
      * Removes all items from the list and initializes a new list
      */
     public void empty() {
 
+    }
+
+    public int getCursor() {
+        return cursor;
     }
 
 }
