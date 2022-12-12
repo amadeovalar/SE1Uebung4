@@ -53,10 +53,10 @@ public class RingBuffer&lt;T&gt; implements Iterable&lt;T&gt; {
 <span class="fc" id="L53">            throw new UnsupportedOperationException();</span>
         }
         public T next() {
-<span class="pc bpc" id="L56" title="1 of 2 branches missed.">            if (!hasNext()) {</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">            if (!hasNext()) {</span>
 <span class="fc" id="L57">                throw new NoSuchElementException();</span>
             }
-<span class="nc" id="L59">            return buffer[i++];</span>
+<span class="fc" id="L59">            return buffer[i++];</span>
         }
     }
 }

@@ -107,6 +107,19 @@ public class BaseTest {
     }
 
     @Test
+    public void iteratorNextMethodTest() {
+        RingBuffer ringBuffer = new RingBuffer<>(3);
+        List<String> testList = List.of("First", "Second", "Third");
+        for (String string : testList) {
+            ringBuffer.push(string);
+        }
+        Iterator<RingBuffer> iter = ringBuffer.iterator();
+
+        assertEquals(testList.get(0), iter.next());
+        
+    }
+
+    @Test
     // Testing the iterator method
     public void iteratorHasNextMethodTest() {
         RingBuffer ringBuffer = new RingBuffer<>(3);
