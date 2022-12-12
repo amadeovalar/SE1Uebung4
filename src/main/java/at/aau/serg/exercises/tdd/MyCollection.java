@@ -36,7 +36,19 @@ public class MyCollection {
         if (cursor == 0) {
             throw new IllegalArgumentException();
         }
-        
+        boolean found = false;
+        int indexFound;
+        for (String string : list) {
+            if (s.equals(string)) {
+                found = true;
+                indexFound = ArrayUtils.indexOf(list, s);
+
+                
+            }
+        }
+        if (!found) {
+            throw new IllegalArgumentException();
+        }
 
         
               

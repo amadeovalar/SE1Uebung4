@@ -22,14 +22,31 @@ public class MyCollectionTest
     public void testElementNotInThePopulatedListRemoveMethodException() {
         int capacity = 2;
         MyCollection myCollection = new MyCollection(capacity);
-        
+
         myCollection.add("First element");
         myCollection.add("Second element");
-        
+
         String testString = "Test";
 
         assertThrows(IllegalArgumentException.class, () -> myCollection.remove(testString));
-        
+
+    }
+    
+    @Test
+    public void testSizeOfArrayAfterRemoval() {
+           int capacity = 2;
+        MyCollection myCollection = new MyCollection(capacity);
+
+        String firstElement = "First element";
+        String secondElement = "Second element";
+
+        myCollection.add(firstElement);
+        myCollection.add(secondElement);
+
+
+        myCollection.remove(firstElement);
+
+        assertEquals(capacity-1, myCollection.size());
     }
 
     @Test
