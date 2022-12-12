@@ -10,12 +10,26 @@ import org.junit.jupiter.api.Test;
 public class MyCollectionTest
 {
     @Test
-    public void testRemoveMethodException() {
+    public void testEmptyListRemoveMethodException() {
         int capacity = 2;
         MyCollection myCollection = new MyCollection(capacity);
 
         String testString = "Test";
         assertThrows(IllegalArgumentException.class, () -> myCollection.remove(testString));
+    }
+    
+    @Test
+    public void testElementNotInThePopulatedListRemoveMethodException() {
+        int capacity = 2;
+        MyCollection myCollection = new MyCollection(capacity);
+        
+        myCollection.add("First element");
+        myCollection.add("Second element");
+        
+        String testString = "Test";
+
+        assertThrows(IllegalArgumentException.class, () -> myCollection.remove(testString));
+        
     }
 
     @Test

@@ -11,10 +11,6 @@ public class MyCollection {
         cursor=0;
     }
 
-    public String[] getList() {
-        return list;
-    }
-
     /**
      * Returns the size of the collection
      * @return The number of instances in the collection
@@ -40,7 +36,13 @@ public class MyCollection {
         if (cursor == 0) {
             throw new IllegalArgumentException();
         }
-    }
+        
+
+        
+              
+        }  
+        
+    
     
 
     /**
@@ -48,10 +50,6 @@ public class MyCollection {
      */
     public void empty() {
 
-    }
-
-    public int getCursor() {
-        return cursor;
     }
 
 }
