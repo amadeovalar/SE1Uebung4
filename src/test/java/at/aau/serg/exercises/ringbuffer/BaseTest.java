@@ -1,7 +1,5 @@
 package at.aau.serg.exercises.ringbuffer;
 
-
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -20,12 +18,7 @@ import org.junit.jupiter.api.Test;
 // @RunWith(JUnitPlatform.class)
 public class BaseTest {
 
-    // RingBuffer ringBuffer;
-
-    // @BeforeEach
-    // void setUp() {
-    //     ringBuffer = new RingBuffer<>(50);
-    // }
+    // Meine Strategie war die gesamte Branch Coverage zu erzielen.
 
     @Test
     // Testing isEmpty() method
