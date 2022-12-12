@@ -5,6 +5,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+// McCabe Zyklomatische Komplexität V(G)
+// V(G) = Anzahl der Bedingungen + 1
+// In diesem Fall ist V(G) = 2 + 1 = 3
+// In dem Fall sind wenigstens 3 Test benötigt um die 100% Pfadenüberdeckung zu erzielen.  
+
 public class McCabeTest {
 
     @Test
