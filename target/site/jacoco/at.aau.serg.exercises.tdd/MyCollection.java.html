@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MyCollection.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">se14</a> &gt; <a href="index.source.html" class="el_package">at.aau.serg.exercises.tdd</a> &gt; <span class="el_source">MyCollection.java</span></div><h1>MyCollection.java</h1><pre class="source lang-java linenums">package at.aau.serg.exercises.tdd;
 
+import org.apache.commons.lang.ArrayUtils;
+
 public class MyCollection {
     private String[] list;
-<span class="nc" id="L5">    private int cursor=0;</span>
+<span class="nc" id="L7">    private int cursor=0;</span>
 
-<span class="nc" id="L7">    public MyCollection(int capacity){</span>
-<span class="nc" id="L8">        list = new String[capacity];</span>
-<span class="nc" id="L9">        cursor=0;</span>
-<span class="nc" id="L10">    }</span>
+<span class="nc" id="L9">    public MyCollection(int capacity){</span>
+<span class="nc" id="L10">        list = new String[capacity];</span>
+<span class="nc" id="L11">        cursor=0;</span>
+<span class="nc" id="L12">    }</span>
 
     /**
      * Returns the size of the collection
      * @return The number of instances in the collection
      */
     public int size() {
-<span class="nc" id="L17">        return cursor;</span>
+<span class="nc" id="L19">        return cursor;</span>
     }
 
     /**
@@ -22,24 +24,55 @@ public class MyCollection {
      * @param s String to remove
      */
     public void add(String s) {
-<span class="nc" id="L25">        list[cursor++]=s;</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L27">        list[cursor++]=s;</span>
+<span class="nc" id="L28">    }</span>
 
     /**
      * Removes the String from the list. If the String is not in the list it throws an
      * IllegalArgumentException. If the list is empty it throws an IllegalArgumentException
      * @param s String to remove
      */
-    public void remove(String s) throws IllegalArgumentException{
+    public void remove(String s) throws IllegalArgumentException {
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        if (cursor == 0) {</span>
+<span class="nc" id="L37">            throw new IllegalArgumentException();</span>
+        }
+<span class="nc" id="L39">        boolean found = false;</span>
+        int indexFound;
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (String string : list) {</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">            if (s.equals(string)) {</span>
+<span class="nc" id="L43">                found = true;</span>
+<span class="nc" id="L44">                indexFound = ArrayUtils.indexOf(list, s);</span>
+                
+<span class="nc" id="L46">                String[] newList = new String[list.length-1];</span>
+
+<span class="nc bnc" id="L48" title="All 2 branches missed.">                for (int i = 0, k = 0; i &lt; list.length; i++) {</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">                    if (i == indexFound) {</span>
+<span class="nc" id="L50">                        continue;</span>
+                    }
+<span class="nc" id="L52">                    newList[k++] = list[i];</span>
+                }
+<span class="nc" id="L54">                list = newList;</span>
+<span class="nc" id="L55">                cursor--;</span>
+                
+            }
+        }
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (!found) {</span>
+<span class="nc" id="L60">            throw new IllegalArgumentException();</span>
+        }
+
         
-<span class="nc" id="L35">    }</span>
+              
+<span class="nc" id="L65">        }  </span>
+        
+    
+    
 
     /**
      * Removes all items from the list and initializes a new list
      */
     public void empty() {
 
-<span class="nc" id="L42">    }</span>
+<span class="nc" id="L75">    }</span>
 
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

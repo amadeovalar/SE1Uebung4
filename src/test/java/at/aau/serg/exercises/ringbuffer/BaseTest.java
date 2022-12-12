@@ -12,10 +12,10 @@ import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Test;
 
 
-// import org.junit.platform.runner.JUnitPlatform;
-// import org.junit.runner.RunWith;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 
-// @RunWith(JUnitPlatform.class)
+@RunWith(JUnitPlatform.class)
 public class BaseTest {
 
     // Meine Strategie war die gesamte Branch Coverage zu erzielen.

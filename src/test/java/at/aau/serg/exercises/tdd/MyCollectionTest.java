@@ -34,7 +34,7 @@ public class MyCollectionTest
     
     @Test
     public void testSizeOfArrayAfterRemoval() {
-           int capacity = 2;
+        int capacity = 2;
         MyCollection myCollection = new MyCollection(capacity);
 
         String firstElement = "First element";
@@ -43,11 +43,11 @@ public class MyCollectionTest
         myCollection.add(firstElement);
         myCollection.add(secondElement);
 
-
         myCollection.remove(firstElement);
 
-        assertEquals(capacity-1, myCollection.size());
+        assertEquals(capacity - 1, myCollection.size());
     }
+    
 
     @Test
     public void testArraySizeAfterRemove() {

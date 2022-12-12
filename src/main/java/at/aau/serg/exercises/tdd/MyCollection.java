@@ -42,7 +42,17 @@ public class MyCollection {
             if (s.equals(string)) {
                 found = true;
                 indexFound = ArrayUtils.indexOf(list, s);
+                
+                String[] newList = new String[list.length-1];
 
+                for (int i = 0, k = 0; i < list.length; i++) {
+                    if (i == indexFound) {
+                        continue;
+                    }
+                    newList[k++] = list[i];
+                }
+                list = newList;
+                cursor--;
                 
             }
         }
@@ -61,7 +71,7 @@ public class MyCollection {
      * Removes all items from the list and initializes a new list
      */
     public void empty() {
-
+        
     }
 
 }
