@@ -74,6 +74,18 @@ public class BaseTest {
         assertThrows(RuntimeException.class, () -> ringBuffer.pop());
     }
     
+    // @Test
+    // // Testing the pop() method 
+    // public void popMethodTest() {
+    //     RingBuffer ringBuffer = new RingBuffer<>(3);
+    //     List<String> testList = List.of("First", "Second", "Third");
+    //     for (String string : testList) {
+    //         ringBuffer.push(string);
+    //     }
+    //     ringBuffer.pop();
+
+    //     assertEquals(testList.size() - 1, ringBuffer.size());
+    // }
     @Test
     // Testing the pop() method 
     public void popMethodTest() {
@@ -82,9 +94,13 @@ public class BaseTest {
         for (String string : testList) {
             ringBuffer.push(string);
         }
-        ringBuffer.pop();
-
-        assertEquals(testList.size() - 1, ringBuffer.size());
+        Iterator<RingBuffer> iter = ringBuffer.iterator();
+        int sizeCounter = testList.size();
+        for (int i = 0; i < testList.size()-1; i++) {
+            assertEquals(sizeCounter, ringBuffer.size());
+            ringBuffer.pop();
+            sizeCounter--;
+        }
     }
 
     @Test
@@ -107,8 +123,9 @@ public class BaseTest {
             ringBuffer.push(string);
         }
         Iterator<RingBuffer> iter = ringBuffer.iterator();
-
-        assertEquals(testList.get(0), iter.next());
+        for (int i = 0; i < testList.size(); i++) {
+            assertEquals(testList.get(i), iter.next());     
+        }
         
     }
 
