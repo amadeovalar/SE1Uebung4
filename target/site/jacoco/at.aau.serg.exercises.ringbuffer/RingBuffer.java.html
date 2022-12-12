@@ -23,41 +23,41 @@ public class RingBuffer&lt;T&gt; implements Iterable&lt;T&gt; {
 <span class="fc" id="L23">        return count;</span>
     }
     public void push(T item) {
-<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if (count == buffer.length) {</span>
-<span class="nc" id="L27">            throw new RuntimeException(&quot;Ring buffer overflow&quot;);</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if (count == buffer.length) {</span>
+<span class="fc" id="L27">            throw new RuntimeException(&quot;Ring buffer overflow&quot;);</span>
         }
 <span class="fc" id="L29">        buffer[indexIn] = item;</span>
 <span class="fc" id="L30">        indexIn = (indexIn + 1) % buffer.length;     // wrap-around</span>
 <span class="fc" id="L31">        count++;</span>
 <span class="fc" id="L32">    }</span>
     public T pop() {
-<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (isEmpty()) {</span>
-<span class="nc" id="L35">            throw new RuntimeException(&quot;Ring buffer underflow&quot;);</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (isEmpty()) {</span>
+<span class="fc" id="L35">            throw new RuntimeException(&quot;Ring buffer underflow&quot;);</span>
         }
-<span class="nc" id="L37">        T item = buffer[indexOut];</span>
-<span class="nc" id="L38">        buffer[indexOut] = null;                  // to help with garbage collection</span>
-<span class="nc" id="L39">        count--;</span>
-<span class="nc" id="L40">        indexOut = (indexOut + 1) % buffer.length; // wrap-around</span>
-<span class="nc" id="L41">        return item;</span>
+<span class="fc" id="L37">        T item = buffer[indexOut];</span>
+<span class="fc" id="L38">        buffer[indexOut] = null;                  // to help with garbage collection</span>
+<span class="fc" id="L39">        count--;</span>
+<span class="fc" id="L40">        indexOut = (indexOut + 1) % buffer.length; // wrap-around</span>
+<span class="fc" id="L41">        return item;</span>
     }
     public Iterator&lt;T&gt; iterator() {
-<span class="nc" id="L44">        return new RingBufferIterator();</span>
+<span class="fc" id="L44">        return new RingBufferIterator();</span>
     }
     // an iterator, doesn't implement remove() since it's optional
-<span class="nc" id="L47">    private class RingBufferIterator implements Iterator&lt;T&gt; {</span>
-<span class="nc" id="L48">        private int i = 0;</span>
+<span class="fc" id="L47">    private class RingBufferIterator implements Iterator&lt;T&gt; {</span>
+<span class="fc" id="L48">        private int i = 0;</span>
         public boolean hasNext() {
-<span class="nc bnc" id="L50" title="All 2 branches missed.">            return i &lt; count;</span>
+<span class="fc bfc" id="L50" title="All 2 branches covered.">            return i &lt; count;</span>
         }
         public void remove() {
-<span class="nc" id="L53">            throw new UnsupportedOperationException();</span>
+<span class="fc" id="L53">            throw new UnsupportedOperationException();</span>
         }
         public T next() {
-<span class="nc bnc" id="L56" title="All 2 branches missed.">            if (!hasNext()) {</span>
-<span class="nc" id="L57">                throw new NoSuchElementException();</span>
+<span class="pc bpc" id="L56" title="1 of 2 branches missed.">            if (!hasNext()) {</span>
+<span class="fc" id="L57">                throw new NoSuchElementException();</span>
             }
 <span class="nc" id="L59">            return buffer[i++];</span>
         }
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

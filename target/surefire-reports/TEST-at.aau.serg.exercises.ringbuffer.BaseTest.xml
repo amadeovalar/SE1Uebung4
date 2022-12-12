@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="at.aau.serg.exercises.ringbuffer.BaseTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="11" failures="0" name="at.aau.serg.exercises.ringbuffer.BaseTest" time="0.005" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.4.1+1"/>
@@ -61,7 +61,15 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="isNotEmptyTest" time="0.003"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="isNotEmptyTest" time="0.002"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="pushExceptionTest" time="0"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="iteratorHasNextMethodTest" time="0.001"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="popExceptionTesting" time="0"/>
   <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="isEmptyTest" time="0"/>
-  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="sizeTest" time="0.001"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="popMethodTest" time="0.001"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="iteratorTest" time="0"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="sizeTest" time="0"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="iteratorRemoveMethodExceptionTest" time="0"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="iteratorNextExceptionTest" time="0.001"/>
+  <testcase classname="at.aau.serg.exercises.ringbuffer.BaseTest" name="sizeValuesAddedTest" time="0"/>
 </testsuite>

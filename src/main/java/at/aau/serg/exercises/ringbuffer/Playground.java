@@ -1,5 +1,6 @@
 package at.aau.serg.exercises.ringbuffer;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Playground {
@@ -23,6 +24,17 @@ public class Playground {
         System.out.println("Size after pop: " + testRing.size());
 
         System.out.println(testRing.isEmpty());
+
+        // Testing iterator functionality
+
+        Iterator<RingBuffer> iter = testRing.iterator();
+
+        while (iter.hasNext()) {
+            System.out.println("Element in the buffer: " + iter.next());
+        }
+
+
+        System.out.println(); 
 
     }
 }
