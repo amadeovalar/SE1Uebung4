@@ -1,5 +1,7 @@
 package at.aau.serg.exercises.tdd;
 
+import org.apache.commons.lang.ArrayUtils;
+
 public class MyCollection {
     private String[] list;
     private int cursor=0;

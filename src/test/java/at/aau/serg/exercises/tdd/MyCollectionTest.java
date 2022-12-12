@@ -1,14 +1,23 @@
 package at.aau.serg.exercises.tdd;
 
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
 
 
 public class MyCollectionTest
 {
+    @Test
+    public void testRemoveMethodException() {
+        int capacity = 2;
+        MyCollection myCollection = new MyCollection(capacity);
+
+        String testString = "Test";
+        assertThrows(IllegalArgumentException.class, () -> myCollection.remove(testString));
+    }
+
     @Test
     public void testArraySizeAfterRemove() {
         int capacity = 2;
