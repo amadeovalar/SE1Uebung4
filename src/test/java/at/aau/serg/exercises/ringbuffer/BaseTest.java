@@ -74,18 +74,6 @@ public class BaseTest {
         assertThrows(RuntimeException.class, () -> ringBuffer.pop());
     }
     
-    // @Test
-    // // Testing the pop() method 
-    // public void popMethodTest() {
-    //     RingBuffer ringBuffer = new RingBuffer<>(3);
-    //     List<String> testList = List.of("First", "Second", "Third");
-    //     for (String string : testList) {
-    //         ringBuffer.push(string);
-    //     }
-    //     ringBuffer.pop();
-
-    //     assertEquals(testList.size() - 1, ringBuffer.size());
-    // }
     @Test
     // Testing the pop() method 
     public void popMethodTest() {
