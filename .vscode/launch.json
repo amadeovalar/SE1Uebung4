@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch Playground",
             "request": "launch",
+            "mainClass": "at.aau.serg.exercises.tdd.Playground",
+            "projectName": "se14"
+        },
+        {
+            "type": "java",
+            "name": "Launch Playground",
+            "request": "launch",
             "mainClass": "at.aau.serg.exercises.ringbuffer.Playground",
             "projectName": "se14"
         },
